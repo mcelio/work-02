@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<title>Client Crossover</title>
+</h:head>
+<h:body>
+	<center>
+		<p:dialog header="Login to access the system." modal="false"
+			closable="false" position="center" widgetVar="modalLogin"
+			minWidth="300" width="300" showEffect="slide" draggable="false"
+			resizable="false" visible="true">
+
+			<p:panel id="custom" style="margin-bottom:20px">
+				<h:outputText value="Invalid user/password!"
+					rendered="#{param.error}"
+					style="color:darkred; font-size: 14px; padding-bottom: 10px;" />
+
+				<h:panelGrid columns="2" cellpadding="10">
+					<form id="loginForm" method="post"
+						action="#{request.contextPath}/j_spring_security_check">
+						<p>
+							User: <br /> <input id="j_username" name="j_username"
+								type="text" />
+						</p>
+						<p>
+							Password: <br /> <input id="j_password" name="j_password"
+								type="text" />
+						</p>
+						<p>
+							<input type="submit" value="Go!" />
+						</p>
+					</form>
+				</h:panelGrid>
+			</p:panel>
+		</p:dialog>
+	</center>
+</h:body>
+</html>

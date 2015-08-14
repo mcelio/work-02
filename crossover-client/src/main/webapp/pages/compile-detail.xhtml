@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<title>Crossover client.</title>
+
+</h:head>
+<h:body bgcolor="grey">
+
+	<center>
+		<h1>Crossover Compilation detail</h1>	
+		<p:outputPanel>
+			<h:panelGrid columns="2">
+				
+				<p:outputLabel value="Id:"/>
+				<p:inputText disabled="true" value="#{clientBean.compilationDetail.id}"/>
+				
+				<p:outputLabel value="Date:"/>
+				<p:inputText disabled="true" value="#{clientBean.compilationDetail.date}"/>
+				
+				
+				<p:outputLabel value="Description:"/>
+				<p:inputText disabled="true" value="#{clientBean.compilationDetail.description}"/>
+				
+				
+				<p:outputLabel value="Log:"/>
+				<p:inputTextarea rows="20" cols="100" value="#{clientBean.compilationDetail.log}"></p:inputTextarea>
+								
+								
+				<h:link outcome="compile-panel">Back</h:link>				
+			</h:panelGrid>
+		</p:outputPanel>
+	</center>
+</h:body>
+</html>
